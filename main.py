@@ -1,1 +1,2 @@
-print ('Hello, Pycharm')
+
+print("New project")

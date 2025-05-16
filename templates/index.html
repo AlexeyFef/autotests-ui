@@ -4,28 +4,53 @@
     <meta charset="UTF-8">
     <title>Title123</title>
     <style>
+        h5 {
+            font-size: 20px;
+        }
         .h2-text {
             color: red;
-            height: 50px
+            height: 30px;
+            font-size: 50px
+        }
+        .h6-text {
+            color: blue
+        }
+        #h1-text {
+            font-size: 60px
+        }
+        div.python> a {
+            color: yellow
+        }
+        ul li {
+            color: green
+        }
+        li::marker {
+            color: red
+        }
+        ul > li:nth-child(2) {
+            color: blue
+        }
+        ol > li:nth-child(odd) {
+           color: pink
+        }
+        ol > li:nth-child(even) {
+            color: brown
         }
     </style>
 </head>
 <body>
 <div>
     <h1 id="h1-text">text 1</h1>
+    <h1>h1-text</h1>
     <h2 class="h2-text">text 2</h2>
-    <h5 class="h2-text">text 5</h5>
+    <h5 class="h5-text">text 5</h5>
+    <h6 class="h2-text h6-text">text 6</h6>
     <p>А это у нас абзац))</p>
     <p>Locators are the central piece of Playwright's auto-waiting and retry-ability. In a nutshell, locators represent a way to find element(s) on the page at any moment.</p>
 </div>
 
-<ol>
-    <li>Первый пункт</li>
-    <li>Второй пункт</li>
-    <li>Третий пункт</li>
-</ol>
-
-<a href="https://www.w3schools.com/tags/" target="_blank">Перейти по ссылке:</a>
+<div class="python">
+<a href="https://playwright.dev/python/" target="_blank">Перейти по ссылке: Python</a>
 <p>А это у нас <span style="color: red;">новый абзац</span>))</p>
 <img src="https://playwright.dev/python/img/logos/Browsers.png" style="width: 250px" alt="Browsers (Chromium, Firefox, WebKit)">
 <ul>
@@ -40,27 +65,52 @@
     <textarea placeholder="text">Комментарий</textarea>
     <button type="submit" disabled>Отправить заказ</button>
 </form>
-<table>
-    <thead>
-    <tr>
-        <td>Заголовок 1</td>
-        <td>Заголовок 2</td>
-        <td>Заголовок 3</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Строка 1</td>
-        <td>Строка 2</td>
-        <td>Строка 3</td>
-    </tr>
-    <tr>
-        <td>Строка 1</td>
-        <td>Строка 2</td>
-        <td>Строка 3</td>
-    </tr>
-    </tbody>
-</table>
+    <ol>
+        <li>Первый пункт</li>
+        <li>Второй пункт</li>
+        <li>Третий пункт</li>
+        <li>Четвертый пункт</li>
+    </ol>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Заголовок 1</td>
+                <td>Заголовок 2</td>
+                <td>Заголовок 3</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Строка 1</td>
+                <td>Строка 2</td>
+                <td>Строка 3</td>
+            </tr>
+            <tr>
+                <td>Строка 1</td>
+                <td>Строка 2</td>
+                <td>Строка 3</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="java">
+        <a href="https://playwright.dev/java/" target="_blank">Перейти по ссылке: Java</a>
+    </div>
+    <div class="nth">
+        <p>One</p>
+        <p>Two</p>
+        <h2>Three</h2>
+        <h4>Four</h4>
+        <p>Five</p>
+    </div>
+    <ol>
+    <li>Первый пункт</li>
+    <li>Второй пункт</li>
+    <li>Третий пункт</li>
+    <li>Четвертый пункт</li>
+</ol>
+</div>
 </body>
 </html>
 

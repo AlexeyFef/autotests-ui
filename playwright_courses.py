@@ -22,7 +22,6 @@ with sync_playwright() as playwright:
 
     context.storage_state(path='browser-state.json')
 
-    page.wait_for_timeout(3000)
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=False)
@@ -42,8 +41,8 @@ with sync_playwright() as playwright:
     expect(title_there_is_no_results).to_be_visible()
     expect(title_there_is_no_results).to_have_text('There is no results')
 
-    title_results_from_the_load_test_pipeline_will_be_displayed_here = page.get_by_test_id('courses-list-empty-view-description-text')
-    expect(title_results_from_the_load_test_pipeline_will_be_displayed_here).to_be_visible()
-    expect(title_results_from_the_load_test_pipeline_will_be_displayed_here).to_have_text('Results from the load test pipeline will be displayed here')
+    courses_empty_view_description = page.get_by_test_id('courses-list-empty-view-description-text')
+    expect(courses_empty_view_description).to_be_visible()
+    expect(courses_empty_view_description).to_have_text('Results from the load test pipeline will be displayed here')
 
     page.wait_for_timeout(5000)

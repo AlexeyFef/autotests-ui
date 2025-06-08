@@ -9,7 +9,7 @@ def chromium_page(playwright: Playwright) -> Page: # Аннотируем воз
 
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 # Фикстура регистрирует нового пользователя и сохранять состояние браузера для последующего использования
 def initialize_browser_state(playwright: Playwright):
     browser = playwright.chromium.launch(headless=False)
@@ -34,7 +34,7 @@ def initialize_browser_state(playwright: Playwright):
 
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture()
 # Фикстура открывает новую страницу браузера, используя сохраненное состояние из файла browser-state.json
 def chromium_page_with_state(initialize_browser_state, playwright: Playwright) -> Page:
     browser = playwright.chromium.launch(headless=False)

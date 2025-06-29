@@ -25,6 +25,6 @@ def dashboard_page(chromium_page: Page) -> DashboardPage:
 def courses_list_page(chromium_page_with_state: Page) -> CoursesListPage:
     return CoursesListPage(page=chromium_page_with_state)
 
-@pytest.fixture()
+@pytest.fixture
 def create_course_page(chromium_page_with_state: Page) -> CreateCoursePage:
     return CreateCoursePage(page=chromium_page_with_state)

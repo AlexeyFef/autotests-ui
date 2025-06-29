@@ -55,10 +55,10 @@ class CreateCoursePage(BasePage):
         self.exercises_empty_view_icon = page.get_by_test_id('create-course-exercises-empty-view-icon')
         self.exercises_empty_view_title = page.get_by_test_id('create-course-exercises-empty-view-title-text')
         self.exercises_empty_view_description = page.get_by_test_id(
-            'create-course-exercises-empty-view-title-text'
+            'create-course-exercises-empty-view-description-text'
         )
 
-    def check_visible_crete_course_title(self):
+    def check_visible_create_course_title(self):
         expect(self.create_course_title).to_be_visible()
         expect(self.create_course_title).to_have_text('Create course')
 

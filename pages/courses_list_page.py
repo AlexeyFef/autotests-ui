@@ -9,6 +9,7 @@ class CoursesListPage(BasePage):
         super().__init__(page)
 
         self.sidebar = SidebarComponent(page)
+        self.navbar = NavbarComponent(page)
 
         self.courses_title = page.get_by_test_id('courses-list-toolbar-title-text')
         self.create_courses_button = page.get_by_test_id('courses-list-toolbar-create-course-button')

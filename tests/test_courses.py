@@ -34,7 +34,7 @@ def test_create_course(courses_list_page: CoursesListPage, create_course_page: C
     )
     create_course_page.check_visible_exercises_title()
     create_course_page.check_visible_create_exercise_button()
-    create_course_page.check_visible_exercise_empty_view()
+    create_course_page.check_visible_exercises_empty_view()
 
     create_course_page.upload_preview_image('./testdata/files/image.png')
     create_course_page.check_visible_image_upload_view(is_image_uploaded=True)

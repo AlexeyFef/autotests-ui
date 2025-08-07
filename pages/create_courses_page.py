@@ -155,10 +155,10 @@ class CreateCoursePage(BasePage):
     def click_create_exercise_button(self):
         self.exercises_button.click()
 
-    def check_visible_exercise_empty_view(self):
+    def check_visible_exercises_empty_view(self):
         self.exercises_empty_view.check_visible(
             title='There is no exercises',
-            description='Create exercise" button to create new exercise'
+            description='Click on "Create exercise" button to create new exercise'
         )
 
     def click_delete_exercise_button(self, index: int):

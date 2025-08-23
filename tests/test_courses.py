@@ -49,7 +49,7 @@ def test_create_course(courses_list_page: CoursesListPage, create_course_page: C
 
     courses_list_page.check_visible_courses_title()
     courses_list_page.check_visible_create_courses_button()
-    courses_list_page.check_visible_course_card(
+    courses_list_page.course_view.check_visible(
         index=0,
         title="Playwright",
         max_score="100",

@@ -1,3 +1,4 @@
+from components.courses.course_view_component import CourseViewComponent
 from components.navigation.sidebar_component import SidebarComponent
 from components.navigation.navbar_component import NavbarComponent
 from components.views.empty_view_component import EmptyViewComponent
@@ -12,19 +13,10 @@ class CoursesListPage(BasePage):
         self.sidebar = SidebarComponent(page)
         self.navbar = NavbarComponent(page)
         self.empty_view = EmptyViewComponent(page, 'courses-list')
+        self.course_view = CourseViewComponent(page)
 
         self.courses_title = page.get_by_test_id('courses-list-toolbar-title-text')
         self.create_courses_button = page.get_by_test_id('courses-list-toolbar-create-course-button')
-
-        self.course_title = page.get_by_test_id('course-widget-title-text')
-        self.course_image = page.get_by_test_id('course-preview-image')
-        self.course_max_text = page.get_by_test_id('course-max-score-info-row-view-text')
-        self.course_min_text = page.get_by_test_id('course-min-score-info-row-view-text')
-        self.course_estimated_time_text = page.get_by_test_id('course-estimated-time-info-row-view-text')
-
-        self.course_menu_button =page.get_by_test_id('course-view-menu-button')
-        self.course_edit_menu_button = page.get_by_test_id('course-view-edit-menu-item')
-        self.course_delete_menu_button = page.get_by_test_id('course-view-delete-menu-item')
 
     def check_visible_courses_title(self):
         expect(self.courses_title).to_be_visible()
@@ -41,37 +33,3 @@ class CoursesListPage(BasePage):
 
     def click_create_courses_button(self):
         self.create_courses_button.click()
-
-    def check_visible_course_card(
-            self,
-            index: int,
-            title: str,
-            max_score: str,
-            min_score: str,
-            estimated_time: str
-    ):
-        expect(self.course_image.nth(index)).to_be_visible()
-
-        expect(self.course_title.nth(index)).to_be_visible()
-        expect(self.course_title.nth(index)).to_have_text(title)
-
-        expect(self.course_max_text.nth(index)).to_be_visible()
-        expect(self.course_max_text.nth(index)).to_have_text(f'Max score: {max_score}')
-
-        expect(self.course_min_text.nth(index)).to_be_visible()
-        expect(self.course_min_text.nth(index)).to_have_text(f'Min score: {min_score}')
-
-        expect(self.course_estimated_time_text.nth(index)).to_be_visible()
-        expect(self.course_estimated_time_text.nth(index)).to_have_text(f'Estimated time: {estimated_time}')
-
-    def click_edit_menu(self, index: int):
-        self.course_menu_button.nth(index).click()
-
-        expect(self.course_edit_menu_button.nth(index)).to_be_visible()
-        self.course_edit_menu_button.nth(index).click()
-
-    def click_delete_menu(self, index: int):
-        self.course_menu_button.nth(index).click()
-
-        expect(self.course_delete_menu_button.nth(index)).to_be_visible()
-        self.course_delete_menu_button.nth(index).click()
